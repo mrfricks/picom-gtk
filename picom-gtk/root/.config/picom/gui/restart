@@ -1,0 +1,22 @@
+#!/bin/sh
+killall picom-gtk
+		echo -7 > /root/.config/picom/gui/shadx
+		echo -7 > /root/.config/picom/gui/shady
+		echo 60 > /root/.config/picom/gui/shadtrans
+		echo yes > /root/.config/picom/gui/shado
+		echo false > /root/.config/picom/gui/fading
+		echo 9 > /root/.config/picom/gui/fadeinstep
+		echo 9 > /root/.config/picom/gui/fadeoutstep
+		echo 100 > /root/.config/picom/gui/inactive
+		echo 100 > /root/.config/picom/gui/active
+		echo 100 > /root/.config/picom/gui/frame
+		echo 100 > /root/.config/picom/gui/menu
+		echo 12 > /root/.config/picom/gui/dim		
+		echo yes > /root/.config/picom/gui/vsync		
+		echo true > /root/.config/picom/gui/glx
+		echo false > /root/.config/picom/gui/xrender
+		echo false > /root/.config/picom/gui/hybrid
+		echo no > /root/.config/picom/gui/urxvt
+		echo 90 > /root/.config/picom/gui/urxvtt
+sleep 2
+exec picom-gtk
