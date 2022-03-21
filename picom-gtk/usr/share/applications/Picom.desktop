@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Window Effects
+GenericName=X compositor settings
+Comment=A X compositor settings
+Categories=DesktopSettings
+Exec=picom-gtk
+Icon=/usr/share/icons/hicolor/scalable/apps/compton.svg
+Keywords=x;x11;compositor;
+# Thanks to quequotion for providing this file!
