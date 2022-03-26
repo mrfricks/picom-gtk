@@ -18,9 +18,11 @@ picom-gtk
 ```
 
 ### uninstall
-* sudo rm /usr/bin/picom-gtk
-* sudo rm /usr/share/applications/Picom.desktop
-* sudo rm /usr/share/icons/hicolor/scalable/apps/compton.svg
+```shell
+sudo rm /usr/bin/picom-gtk
+sudo rm /usr/share/applications/Picom.desktop
+sudo rm /usr/share/icons/hicolor/scalable/apps/compton.svg
+```
 
 simple picom settings editor written in gtkdialog
 
