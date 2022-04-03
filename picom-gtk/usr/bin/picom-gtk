@@ -5,217 +5,217 @@ GTKDIALOG=gtkdialog
 
 #export TMPDIR=/tmp/gtkdialog/examples/"`basename $0`"
 #mkdir -p "$TMPDIR"
-vsync1=`cat /root/.config/picom/gui/vsync`
-shadx1=`cat /root/.config/picom/gui/shadx`
-shady1=`cat /root/.config/picom/gui/shady`
-shadr1=`cat /root/.config/picom/gui/shadr`
-shadt1=`cat /root/.config/picom/gui/shadtrans`
-fading1=`cat /root/.config/picom/gui/fading`
-instep1=`cat /root/.config/picom/gui/fadeinstep`
-outstep1=`cat /root/.config/picom/gui/fadeoutstep`
-inactive1=`cat /root/.config/picom/gui/inactive`
-active1=`cat /root/.config/picom/gui/active`
-frame1=`cat /root/.config/picom/gui/frame`
-menu1=`cat /root/.config/picom/gui/menu`
-dim1=`cat /root/.config/picom/gui/dim`
-tray1=`cat /root/.config/picom/gui/tray`
-glx1=`cat /root/.config/picom/gui/glx`
-xrender1=`cat /root/.config/picom/gui/xrender`
-hybrid1=`cat /root/.config/picom/gui/hybrid`
-urxvtt=`cat /root/.config/picom/gui/urxvt`
-shadon1=`cat /root/.config/picom/gui/shado`
-urxvttt=`cat /root/.config/picom/gui/urxvtt`
-urxvtb1=`cat /root/.config/picom/gui/urxvtb`
-urxvttt2=`cat /root/.config/picom/gui/urxvtt2`
-#GLX=`cat /root/.config/picom/gui/glx`
-#XRENDER=`cat /root/.config/picom/gui/glx`
-#HYBRID=`cat /root/.config/picom/gui/glx`
+vsync1=`cat ~/.config/picom/gui/vsync`
+shadx1=`cat ~/.config/picom/gui/shadx`
+shady1=`cat ~/.config/picom/gui/shady`
+shadr1=`cat ~/.config/picom/gui/shadr`
+shadt1=`cat ~/.config/picom/gui/shadtrans`
+fading1=`cat ~/.config/picom/gui/fading`
+instep1=`cat ~/.config/picom/gui/fadeinstep`
+outstep1=`cat ~/.config/picom/gui/fadeoutstep`
+inactive1=`cat ~/.config/picom/gui/inactive`
+active1=`cat ~/.config/picom/gui/active`
+frame1=`cat ~/.config/picom/gui/frame`
+menu1=`cat ~/.config/picom/gui/menu`
+dim1=`cat ~/.config/picom/gui/dim`
+tray1=`cat ~/.config/picom/gui/tray`
+glx1=`cat ~/.config/picom/gui/glx`
+xrender1=`cat ~/.config/picom/gui/xrender`
+hybrid1=`cat ~/.config/picom/gui/hybrid`
+urxvtt=`cat ~/.config/picom/gui/urxvt`
+shadon1=`cat ~/.config/picom/gui/shado`
+urxvttt=`cat ~/.config/picom/gui/urxvtt`
+urxvtb1=`cat ~/.config/picom/gui/urxvtb`
+urxvttt2=`cat ~/.config/picom/gui/urxvtt2`
+#GLX=`cat ~/.config/picom/gui/glx`
+#XRENDER=`cat ~/.config/picom/gui/glx`
+#HYBRID=`cat ~/.config/picom/gui/glx`
 
 export TEXTDOMAIN=picom
 export OUTPUT_CHARSET=UTF-8
 . gettext.sh 
 
 GLXX () {
-   sed -i 's/backend = .*"/backend = "glx"/g' /root/.config/picom/picom.conf &
-   echo "true" > /root/.config/picom/gui/glx
-   echo "false" > /root/.config/picom/gui/hybrid
-   echo "false" > /root/.config/picom/gui/xrender
+   sed -i 's/backend = .*"/backend = "glx"/g' ~/.config/picom/picom.conf &
+   echo "true" > ~/.config/picom/gui/glx
+   echo "false" > ~/.config/picom/gui/hybrid
+   echo "false" > ~/.config/picom/gui/xrender
 }
 export -f GLXX
 
 XRENDER () {
-   sed -i 's/backend = .*"/backend = "xrender"/g' /root/.config/picom/picom.conf &
-   echo "true" > /root/.config/picom/gui/xrender
-   echo "false" > /root/.config/picom/gui/glx
-   echo "false" > /root/.config/picom/gui/hybrid
+   sed -i 's/backend = .*"/backend = "xrender"/g' ~/.config/picom/picom.conf &
+   echo "true" > ~/.config/picom/gui/xrender
+   echo "false" > ~/.config/picom/gui/glx
+   echo "false" > ~/.config/picom/gui/hybrid
 }
 export -f XRENDER
 
 HYBRID () {
-   sed -i 's/backend = .*"/backend = "xr_glx_hybrid"/g' /root/.config/picom/picom.conf &
-   echo "true" > /root/.config/picom/gui/hybrid
-   echo "false" > /root/.config/picom/gui/glx
-   echo "false" > /root/.config/picom/gui/xrender
+   sed -i 's/backend = .*"/backend = "xr_glx_hybrid"/g' ~/.config/picom/picom.conf &
+   echo "true" > ~/.config/picom/gui/hybrid
+   echo "false" > ~/.config/picom/gui/glx
+   echo "false" > ~/.config/picom/gui/xrender
 }
 export -f HYBRID
 
 VSYNCON () {
-	sed -i 's/vsync = .*/vsync = true/g' /root/.config/picom/picom.conf
+	sed -i 's/vsync = .*/vsync = true/g' ~/.config/picom/picom.conf
 }
 export -f VSYNCON
 
 VSYNCOFF () {
-	sed -i 's/vsync = .*/vsync = false/g' /root/.config/picom/picom.conf
+	sed -i 's/vsync = .*/vsync = false/g' ~/.config/picom/picom.conf
 }
 export -f VSYNCOFF
 
 SHADOWON () {
-	sed -i '11s/.*/shadow = true;/g' /root/.config/picom/picom.conf
+	sed -i '11s/.*/shadow = true;/g' ~/.config/picom/picom.conf
 }
 export -f SHADOWON
 
 SHADOWOFF () {
-	sed -i '11s/.*/shadow = false;/g' /root/.config/picom/picom.conf
+	sed -i '11s/.*/shadow = false;/g' ~/.config/picom/picom.conf
 }
 export -f SHADOWOFF
 
 OFFSETX () {
-	sed -i 's/shadow-offset-x = .*/shadow-offset-x = '${SHADOWX//#}';/g' /root/.config/picom/picom.conf
-	echo ${SHADOWX//#} > /root/.config/picom/gui/shadx
+	sed -i 's/shadow-offset-x = .*/shadow-offset-x = '${SHADOWX//#}';/g' ~/.config/picom/picom.conf
+	echo ${SHADOWX//#} > ~/.config/picom/gui/shadx
 }
 export -f OFFSETX
 
 OFFSETY () {
-	sed -i 's/shadow-offset-y = .*/shadow-offset-y = '${SHADOWY//#}';/g' /root/.config/picom/picom.conf
-	echo ${SHADOWY//#} > /root/.config/picom/gui/shady
+	sed -i 's/shadow-offset-y = .*/shadow-offset-y = '${SHADOWY//#}';/g' ~/.config/picom/picom.conf
+	echo ${SHADOWY//#} > ~/.config/picom/gui/shady
 }
 export -f OFFSETY
 
 SHADRAD () {
-	sed -i 's/shadow-radius = .*/shadow-radius = '${SHADOWR//#}';/g' /root/.config/picom/picom.conf
-	echo ${SHADOWR//#} > /root/.config/picom/gui/shadr
+	sed -i 's/shadow-radius = .*/shadow-radius = '${SHADOWR//#}';/g' ~/.config/picom/picom.conf
+	echo ${SHADOWR//#} > ~/.config/picom/gui/shadr
 }
 export -f SHADRAD
 
 SHADOWTR () {
 SHADTRANS=`python3 -c "print($SHADOWT/100)"`
-	sed -i 's/shadow-opacity = .*/shadow-opacity = '${SHADTRANS//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/shadow-opacity = .*/shadow-opacity = '${SHADTRANS//#}';/g' ~/.config/picom/picom.conf
 }
 export -f SHADOWTR
 
 FADEON () {
-	sed -i 's/fading = .*/fading = true/g' /root/.config/picom/picom.conf
-	echo ${FADING1//#} > /root/.config/picom/gui/fading
+	sed -i 's/fading = .*/fading = true/g' ~/.config/picom/picom.conf
+	echo ${FADING1//#} > ~/.config/picom/gui/fading
 }
 export -f FADEON
 
 FADEOFF () {
-	sed -i 's/fading = .*/fading = false/g' /root/.config/picom/picom.conf
+	sed -i 's/fading = .*/fading = false/g' ~/.config/picom/picom.conf
 }
 export -f FADEOFF
 
 FINSTEP () {
 INSTEP=`python3 -c "print($FADEIN1/100)"`
-	sed -i 's/fade-in-step = .*/fade-in-step = '${INSTEP//#}';/g' /root/.config/picom/picom.conf
-	sed -i 's/fade-out-step = .*/fade-out-step = '${INSTEP//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/fade-in-step = .*/fade-in-step = '${INSTEP//#}';/g' ~/.config/picom/picom.conf
+	sed -i 's/fade-out-step = .*/fade-out-step = '${INSTEP//#}';/g' ~/.config/picom/picom.conf
 }
 export -f FINSTEP
 
 FOUTSTEP () {
-	sed -i 's/fade-delta = .*/fade-delta = '${FADEOUT1//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/fade-delta = .*/fade-delta = '${FADEOUT1//#}';/g' ~/.config/picom/picom.conf
 }
 export -f FOUTSTEP
 
 DIMO () {
 DIMM=`python3 -c "print($DIM1/100)"`
-	sed -i 's/inactive-dim = .*/inactive-dim = '${DIMM//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/inactive-dim = .*/inactive-dim = '${DIMM//#}';/g' ~/.config/picom/picom.conf
 }
 export -f DIMO
 
 INACTIVEO () {
 INACT=`python3 -c "print($INACTIVE1/100)"`
-	sed -i 's/inactive-opacity = .*/inactive-opacity = '${INACT//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/inactive-opacity = .*/inactive-opacity = '${INACT//#}';/g' ~/.config/picom/picom.conf
 }
 export -f INACTIVEO
 
 ACTIVEO () {
 ACTIV=`python3 -c "print($ACTIVE1/100)"`
-	sed -i 's/active-opacity = .*/active-opacity = '${ACTIV//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/active-opacity = .*/active-opacity = '${ACTIV//#}';/g' ~/.config/picom/picom.conf
 }
 export -f ACTIVEO
 
 FRAMEO () {
 FRAM=`python3 -c "print($FRAME1/100)"`
-sed -i 's/frame-opacity = .*/frame-opacity = '${FRAM//#}';/g' /root/.config/picom/picom.conf
+sed -i 's/frame-opacity = .*/frame-opacity = '${FRAM//#}';/g' ~/.config/picom/picom.conf
 }
 export -f FRAMEO
 
 MENUO () {
 MEN=`python3 -c "print($MENU1/100)"`
-	sed -i 's/menu-opacity = .*/menu-opacity = '${MEN//#}';/g' /root/.config/picom/picom.conf
+	sed -i 's/menu-opacity = .*/menu-opacity = '${MEN//#}';/g' ~/.config/picom/picom.conf
 }
 export -f MENUO
 
 TRAY0 () {
-	sed -i '153s/.*:/"'${TRAY1//#}':/g' /root/.config/picom/picom.conf
+	sed -i '153s/.*:/"'${TRAY1//#}':/g' ~/.config/picom/picom.conf
 
 }
 export -f TRAY0
 
 URXVTON () {
-	sed -i 's/#opacity-rule /opacity-rule /g' /root/.config/picom/picom.conf
+	sed -i 's/#opacity-rule /opacity-rule /g' ~/.config/picom/picom.conf
 }
 export -f URXVTON
 
 URXVTOFF () {
-	sed -i 's/opacity-rule /#opacity-rule /g' /root/.config/picom/picom.conf
+	sed -i 's/opacity-rule /#opacity-rule /g' ~/.config/picom/picom.conf
 }
 export -f URXVTOFF
 
 URXVTBON () {
-	sed -i 's/blur-kern = .*/blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";/g' /root/.config/picom/picom.conf
-	sed -i 's/# blur-background = .*/blur-background = true/g' /root/.config/picom/picom.conf
-	sed -i 's/# blur-background-fixed = .*/blur-background-fixed = true/g' /root/.config/picom/picom.conf
+	sed -i 's/blur-kern = .*/blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";/g' ~/.config/picom/picom.conf
+	sed -i 's/# blur-background = .*/blur-background = true/g' ~/.config/picom/picom.conf
+	sed -i 's/# blur-background-fixed = .*/blur-background-fixed = true/g' ~/.config/picom/picom.conf
 }
 export -f URXVTBON
 
 URXVTBOFF () {
-	sed -i 's/blur-kern = .*/blur-kern = "3x3box";/g' /root/.config/picom/picom.conf
-	sed -i 's/blur-background = .*/# blur-background = true/g' /root/.config/picom/picom.conf
-	sed -i 's/blur-background-fixed = .*/# blur-background-fixed = true/g' /root/.config/picom/picom.conf
+	sed -i 's/blur-kern = .*/blur-kern = "3x3box";/g' ~/.config/picom/picom.conf
+	sed -i 's/blur-background = .*/# blur-background = true/g' ~/.config/picom/picom.conf
+	sed -i 's/blur-background-fixed = .*/# blur-background-fixed = true/g' ~/.config/picom/picom.conf
 }
 export -f URXVTBOFF
 
 URXVTT () {
-	sed -i '152s/.*:class_g /opacity-rule = ["'${URXVTT1//#}':class_g /g' /root/.config/picom/picom.conf
+	sed -i '152s/.*:class_g /opacity-rule = ["'${URXVTT1//#}':class_g /g' ~/.config/picom/picom.conf
 }
 export -f URXVTT
 
 #URXVTT2 () {
-#	sed -i '155s/.*:class_g /  "'${URXVTT2//#}':class_g /g' /root/.config/picom/picom.conf
+#	sed -i '155s/.*:class_g /  "'${URXVTT2//#}':class_g /g' ~/.config/picom/picom.conf
 #}
 #export -f URXVTT2
 
 RESTORE () {
-		echo -7 > /root/.config/picom/gui/shadx
-		echo -7 > /root/.config/picom/gui/shady
-		echo 60 > /root/.config/picom/gui/shadtrans
-		echo yes > /root/.config/picom/gui/shado
-		echo false > /root/.config/picom/gui/fading
-		echo 9 > /root/.config/picom/gui/fadeinstep
-		echo 9 > /root/.config/picom/gui/fadeoutstep
-		echo 100 > /root/.config/picom/gui/inactive
-		echo 100 > /root/.config/picom/gui/active
-		echo 100 > /root/.config/picom/gui/frame
-		echo 100 > /root/.config/picom/gui/menu
-		echo 12 > /root/.config/picom/gui/dim		
-		echo yes > /root/.config/picom/gui/vsync		
-		echo true > /root/.config/picom/gui/glx
-		echo false > /root/.config/picom/gui/xrender
-		echo false > /root/.config/picom/gui/hybrid
-		echo no > /root/.config/picom/gui/urxvt
-		echo 90 > /root/.config/picom/gui/urxvtt
-		echo 70 > /root/.config/picom/gui/urxvtt2		
+		echo -7 > ~/.config/picom/gui/shadx
+		echo -7 > ~/.config/picom/gui/shady
+		echo 60 > ~/.config/picom/gui/shadtrans
+		echo yes > ~/.config/picom/gui/shado
+		echo false > ~/.config/picom/gui/fading
+		echo 9 > ~/.config/picom/gui/fadeinstep
+		echo 9 > ~/.config/picom/gui/fadeoutstep
+		echo 100 > ~/.config/picom/gui/inactive
+		echo 100 > ~/.config/picom/gui/active
+		echo 100 > ~/.config/picom/gui/frame
+		echo 100 > ~/.config/picom/gui/menu
+		echo 12 > ~/.config/picom/gui/dim		
+		echo yes > ~/.config/picom/gui/vsync		
+		echo true > ~/.config/picom/gui/glx
+		echo false > ~/.config/picom/gui/xrender
+		echo false > ~/.config/picom/gui/hybrid
+		echo no > ~/.config/picom/gui/urxvt
+		echo 90 > ~/.config/picom/gui/urxvtt
+		echo 70 > ~/.config/picom/gui/urxvtt2		
 }
 export -f RESTORE
 
@@ -232,9 +232,9 @@ MAIN_DIALOG='
 			<default>'$vsync1'</default>
 			<action>echo Checkbox is $CHECKBOX now.</action>
 			<action>if true VSYNCON</action>
-			<action>if true echo yes > /root/.config/picom/gui/vsync</action>     
+			<action>if true echo yes > ~/.config/picom/gui/vsync</action>     
 			<action>if false VSYNCOFF</action>
-			<action>if false echo no > /root/.config/picom/gui/vsync</action>     
+			<action>if false echo no > ~/.config/picom/gui/vsync</action>     
 			</checkbox>
 		<radiobutton>
 			<label>GLX</label>
@@ -266,9 +266,9 @@ MAIN_DIALOG='
 			<default>'$shadon1'</default>
 			<action>echo Checkbox is $CHECKBOX now.</action>
 			<action>if true SHADOWON</action>
-			<action>if true echo yes > /root/.config/picom/gui/shado</action>     
+			<action>if true echo yes > ~/.config/picom/gui/shado</action>     
 			<action>if false SHADOWOFF</action>
-			<action>if false echo no > /root/.config/picom/gui/shado</action>     
+			<action>if false echo no > ~/.config/picom/gui/shado</action>     
 			</checkbox>
 		</vbox>
 		<vbox>
@@ -300,7 +300,7 @@ MAIN_DIALOG='
 			<spinbutton range-min="1" range-max="100">
 			<variable>SHADOWT</variable>  
 			<default>'$shadt1'</default>
-			<action>echo ${SHADOWT//#} > /root/.config/picom/gui/shadtrans</action>     
+			<action>echo ${SHADOWT//#} > ~/.config/picom/gui/shadtrans</action>     
 			<action signal="button-release-event">SHADOWTR &</action>
 			</spinbutton>
 		</vbox>
@@ -317,9 +317,9 @@ MAIN_DIALOG='
 			<default>'$fading1'</default>
 			<action>echo Checkbox is $CHECKBOX now.</action>
 			<action>if true FADEON</action>
-			<action>if true echo ${FADING1//#} > /root/.config/picom/gui/fading</action>
+			<action>if true echo ${FADING1//#} > ~/.config/picom/gui/fading</action>
 			<action>if false FADEOFF</action>
-			<action>if false echo ${FADING1//#} > /root/.config/picom/gui/fading</action>
+			<action>if false echo ${FADING1//#} > ~/.config/picom/gui/fading</action>
 			</checkbox>
 		</vbox>
 		<vbox>
@@ -328,7 +328,7 @@ MAIN_DIALOG='
 			<variable>FADEIN1</variable>  
 			<default>'$instep1'</default>
 			<action signal="button-release-event">FINSTEP &</action>
-			<action>echo ${FADEIN1//#} > /root/.config/picom/gui/fadeinstep</action>     
+			<action>echo ${FADEIN1//#} > ~/.config/picom/gui/fadeinstep</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -337,7 +337,7 @@ MAIN_DIALOG='
 			<variable>FADEOUT1</variable>  
 			<default>'$outstep1'</default>
 			<action signal="button-release-event">FOUTSTEP &</action>
-			<action>echo ${FADEOUT1//#} > /root/.config/picom/gui/fadeoutstep &</action>     
+			<action>echo ${FADEOUT1//#} > ~/.config/picom/gui/fadeoutstep &</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -346,7 +346,7 @@ MAIN_DIALOG='
 			<variable>DIM1</variable>  
 			<default>'$dim1'</default>
 			<action signal="button-release-event">DIMO &</action>
-			<action>echo ${DIM1//#} > /root/.config/picom/gui/dim</action>     
+			<action>echo ${DIM1//#} > ~/.config/picom/gui/dim</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -368,7 +368,7 @@ MAIN_DIALOG='
 			<variable>INACTIVE1</variable>  
 			<default>'$inactive1'</default>
 			<action signal="button-release-event">INACTIVEO &</action>
-			<action>echo ${INACTIVE1//#} > /root/.config/picom/gui/inactive</action>     
+			<action>echo ${INACTIVE1//#} > ~/.config/picom/gui/inactive</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -377,7 +377,7 @@ MAIN_DIALOG='
 			<variable>ACTIVE1</variable>  
 			<default>'$active1'</default>
 			<action signal="button-release-event">ACTIVEO &</action>
-			<action>echo ${ACTIVE1//#} > /root/.config/picom/gui/active</action>     
+			<action>echo ${ACTIVE1//#} > ~/.config/picom/gui/active</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>       
@@ -386,7 +386,7 @@ MAIN_DIALOG='
 			<variable>FRAME1</variable>  
 			<default>'$frame1'</default>
 			<action signal="button-release-event">FRAMEO &</action>
-			<action>echo ${FRAME1//#} > /root/.config/picom/gui/frame</action>     
+			<action>echo ${FRAME1//#} > ~/.config/picom/gui/frame</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -395,7 +395,7 @@ MAIN_DIALOG='
 			<variable>MENU1</variable>  
 			<default>'$menu1'</default>
 			<action signal="button-release-event">MENUO &</action>
-			<action>echo ${MENU1//#} > /root/.config/picom/gui/menu</action>     
+			<action>echo ${MENU1//#} > ~/.config/picom/gui/menu</action>     
 			</spinbutton> 
 		</vbox>
 		<vbox>
@@ -404,7 +404,7 @@ MAIN_DIALOG='
 			<variable>TRAY1</variable>  
 			<default>'$tray1'</default>
 			<action signal="button-release-event">TRAY0 &</action>
-			<action>echo ${TRAY1//#} > /root/.config/picom/gui/tray</action>     
+			<action>echo ${TRAY1//#} > ~/.config/picom/gui/tray</action>     
 			</spinbutton> 
 		</vbox>
 	</hbox> 
@@ -418,9 +418,9 @@ MAIN_DIALOG='
 			<default>'$urxvtb1'</default>
 			<action>echo Checkbox is $CHECKBOX now.</action>
 			<action>if true URXVTBON</action>
-			<action>if true echo yes > /root/.config/picom/gui/urxvtb</action>     
+			<action>if true echo yes > ~/.config/picom/gui/urxvtb</action>     
 			<action>if false URXVTBOFF</action>
-			<action>if false echo no > /root/.config/picom/gui/urxvtb</action>     
+			<action>if false echo no > ~/.config/picom/gui/urxvtb</action>     
 			</checkbox>
 			<checkbox xalign="0">
 			<label>Transparency</label>
@@ -428,16 +428,16 @@ MAIN_DIALOG='
 			<default>'$urxvtt'</default>
 			<action>echo Checkbox is $CHECKBOX now.</action>
 			<action>if true URXVTON</action>
-			<action>if true echo yes > /root/.config/picom/gui/urxvt</action>     
+			<action>if true echo yes > ~/.config/picom/gui/urxvt</action>     
 			<action>if false URXVTOFF</action>
-			<action>if false echo no > /root/.config/picom/gui/urxvt</action>     
+			<action>if false echo no > ~/.config/picom/gui/urxvt</action>     
 			</checkbox>
 		<vbox>
 			<spinbutton range-min="40" range-max="99">
 			<variable>URXVTT1</variable>  
 			<default>'$urxvttt'</default>
 			<action signal="button-release-event">URXVTT &</action>
-			<action>echo ${URXVTT1} > /root/.config/picom/gui/urxvtt</action>     
+			<action>echo ${URXVTT1} > ~/.config/picom/gui/urxvtt</action>     
 			</spinbutton> 
 		</vbox>
 	</hbox>
@@ -448,11 +448,11 @@ MAIN_DIALOG='
 		<vbox>
 			<button tooltip-text="'"$(gettext "Manually edit picoms config file")"'">
 			<label>"'"$(gettext "Settings")"'"</label>
-			<action>defaulttexteditor  /root/.config/picom/picom.conf &</action>
+			<action>defaulttexteditor  ~/.config/picom/picom.conf &</action>
 			</button>	     
 			<button tooltip-text="'"$(gettext "Restore original settings. ")"'">   
 			<label>"'"$(gettext "Restore Settings")"'"</label>
-			<action>cp /root/.config/picom/picom.conf.bak /root/.config/picom/picom.conf &</action>
+			<action>cp ~/.config/picom/picom.conf.bak ~/.config/picom/picom.conf &</action>
 			<action>RESTORE</action>
 			<action>picom-gtk &</action>
 			<action type="exit">EXIT_NOW</action>
@@ -463,7 +463,7 @@ MAIN_DIALOG='
 			<button tooltip-text="'"$(gettext "Restart Compton and apply current settings")"'">
 			<label>"'"$(gettext "Restart")"'"</label>
 			<action>killall picom</action>
-			<action>picom --config /root/.config/picom/picom.conf &</action>
+			<action>picom --config ~/.config/picom/picom.conf &</action>
 			</button>
 			<button tooltip-text="'"$(gettext "Stop Compton")"'">
 			<label>"'"$(gettext "Stop")"'"</label>
@@ -474,14 +474,14 @@ MAIN_DIALOG='
 		<vbox>
 			<button tooltip-text="'"$(gettext "Start compton a boot up")"'">
 			<label>"'"$(gettext "Autostart at Boot")"'"</label>
-			<action>echo killall picom > /root/Startup/Picom &</action>
-			<action>echo sleep 0.2 >> /root/Startup/Picom &</action>
-			<action>echo exec picom --config /root/.config/picom/picom.conf >> /root/Startup/Picom &</action>
-			<action>chmod a+x /root/Startup/Picom &</action>
+			<action>echo killall picom > ~/Startup/Picom &</action>
+			<action>echo sleep 0.2 >> ~/Startup/Picom &</action>
+			<action>echo exec picom --config ~/.config/picom/picom.conf >> ~/Startup/Picom &</action>
+			<action>chmod a+x ~/Startup/Picom &</action>
 			</button>			
 			<button tooltip-text="'"$(gettext "Remove start at boot")"'">
 			<label>"'"$(gettext "Remove Autostart")"'"</label>
-			<action>rm /root/Startup/Picom &</action>
+			<action>rm ~/Startup/Picom &</action>
 			</button>
 		</vbox>
 	</hbox>
@@ -507,9 +507,9 @@ GUI="
 <window>
  <vbox>
  </vbox>
-   <action>echo '$GLXB' > /root/.config/picom/gui/glx</action>
-   <action>echo '$XRENDERB' > /root/.config/picom/gui/xrender</action>
-   <action>echo '$HYBRID' > /root/.config/picom/gui/hybrid</action>
+   <action>echo '$GLXB' > ~/.config/picom/gui/glx</action>
+   <action>echo '$XRENDERB' > ~/.config/picom/gui/xrender</action>
+   <action>echo '$HYBRID' > ~/.config/picom/gui/hybrid</action>
  <action signal=\"hide\">exit:Exit</action>
 </window>"
 export MAIN_DIALOG
